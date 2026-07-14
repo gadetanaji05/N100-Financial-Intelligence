@@ -1,0 +1,16 @@
+2026-07-15 00:02:08,197 - INFO - ETL Pipeline Started
+2026-07-15 00:02:08,402 - INFO - analysis.xlsx loaded successfully
+2026-07-15 00:02:08,439 - INFO - analysis.xlsx cleaned and saved successfully
+2026-07-15 00:02:08,526 - INFO - balancesheet.xlsx loaded successfully
+2026-07-15 00:02:08,699 - INFO - balancesheet.xlsx cleaned and saved successfully
+2026-07-15 00:02:08,763 - INFO - cashflow.xlsx loaded successfully
+2026-07-15 00:02:08,873 - INFO - cashflow.xlsx cleaned and saved successfully
+2026-07-15 00:02:08,891 - INFO - companies.xlsx loaded successfully
+2026-07-15 00:02:08,944 - INFO - companies.xlsx cleaned and saved successfully
+2026-07-15 00:02:09,010 - INFO - documents.xlsx loaded successfully
+2026-07-15 00:02:09,117 - INFO - documents.xlsx cleaned and saved successfully
+2026-07-15 00:02:09,235 - INFO - profitandloss.xlsx loaded successfully
+2026-07-15 00:02:09,442 - INFO - profitandloss.xlsx cleaned and saved successfully
+2026-07-15 00:02:09,447 - INFO - prosandcons.xlsx loaded successfully
+2026-07-15 00:02:09,453 - INFO - prosandcons.xlsx cleaned and saved successfully
+2026-07-15 00:02:09,453 - INFO - ETL Pipeline Completed
