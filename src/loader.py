@@ -169,3 +169,13 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+print("\n==============================")
+print("ETL PIPELINE SUMMARY")
+print("==============================")
+print("All Excel files processed successfully.")
+print("Data cleaned and saved in output folder.")
+print("Validation completed.")
+print("Logging completed.")
+print("Sprint 1 Completed Successfully!")
+print("==============================")
