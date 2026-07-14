@@ -30,6 +30,17 @@ def main():
     print("\nData Types.")
     print(df.dtypes)
     print(df.columns)
+    
+    print("\nDuplicate Rows:",
+    df.duplicated().sum())
+
+    df = df.drop_duplicates()
+
+    df = df.fillna("N/A")
+    df.to_excel("output/companies_cleaned.xlsx",index=False)
+    print("\nCleaned file saved to output companies_cleaned.xlsx")
+    print("\nAfter Cleaning")
+    print(df.isnull().sum())
 
 if __name__ == "__main__":
     main()
