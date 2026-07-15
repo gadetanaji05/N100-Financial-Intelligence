@@ -16,6 +16,31 @@ def clean_data(df):
     df = df.fillna("N/A")
     return df
 
+def calculate_financial_ratios(df):
+    
+    df["sales"] = pd.to_numeric(df["sales"], errors="coerce")
+    df["net_profit"] = pd.to_numeric(df["net_profit"], errors="coerce")
+    df["operating_profit"] = pd.to_numeric(df["operating_profit"], errors="coerce")
+    df["interest"] = pd.to_numeric(df["interest"], errors="coerce")
+
+    if "sales" in df.columns and "net_profit" in df.columns:
+        df["net_profit_margin"] = (
+            df["net_profit"] / df["sales"].replace(0, 1)
+        ) * 100
+
+    if "sales" in df.columns and "operating_profit" in df.columns:
+        df["operating_profit_margin"] = (
+            df["operating_profit"] / df["sales"].replace(0, 1)
+        ) * 100
+
+    if "operating_profit" in df.columns and "interest" in df.columns:
+        df["interest_coverage"] = (
+            df["operating_profit"] /
+            df["interest"].replace(0, 1)
+        )
+
+    return df
+
 
 def validate_data(df, filename):
     """Validate cleaned dataframe"""
@@ -56,19 +81,25 @@ def main():
             # Load Excel
             df = pd.read_excel(file_path, header=1)
 
+
             if df.empty:
                 print("Empty File")
                 logging.warning(f"{file} is empty")
                 continue
 
-            print("Rows:", len(df))
-            print("Columns:", len(df.columns))
+            print("Rows:",len(df))
+            print("Columns:",len(df.columns))
+            print(df.columns.tolist())
+
 
             logging.info(f"{file} loaded successfully")
+            if file =="profitandloss.xlsx":
+                df = calculate_financial_ratios(df)
 
             # Cleaning
             df = clean_data(df)
 
+        
             # Validation
             validate_data(df, file)
 
@@ -97,9 +128,29 @@ def main():
     print("Data cleaned and saved in output folder.")
     print("Validation completed.")
     print("Logging completed.")
-    print("Sprint 2 Day 5 Completed Successfully!")
+    print("Sprint 2 Completed Successfully!")
     print("==============================")
 
+# -------------------------------
+# Financial Ratio Functions
+# -------------------------------
+
+def calculate_net_profit_margin(df):
+    df["net_profit_margin"] = (df["net_profit"] / df["sales"]) * 100
+    return df
+
+
+def calculate_operating_profit_margin(df):
+    df["operating_profit_margin"] = (df["operating_profit"] / df["sales"]) * 100
+    return df
+
+
+def calculate_interest_coverage(df):
+    df["interest_coverage"] = (
+        (df["operating_profit"] + df["other_income"]) /
+        df["interest"].replace(0, 1)
+    )
+    return df
 
 if __name__ == "__main__":
     main()
