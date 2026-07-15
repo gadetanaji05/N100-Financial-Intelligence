@@ -40,6 +40,7 @@ ETL pipeline for Nifty 100 financial datasets.
 - Data validation
 - Logging
 - Export cleaned datasets
+- Financial ratio calculation
 
 ## Technologies
 - Python
