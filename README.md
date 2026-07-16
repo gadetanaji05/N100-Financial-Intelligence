@@ -63,3 +63,12 @@ ETL pipeline for Nifty 100 financial datasets.
 - ✅ Created Tables
 - ✅ Loaded Excel Data into Database
 - ✅ Displayed Sample Records
+
+## Sprint 4 Progress
+
+- ✅ Database Queries
+- ✅ Displayed First 5 Companies
+- ✅ Displayed Top 10 Companies
+- ✅ Search Company by Name
+- ✅ Count Total Companies
+- ✅ Listed All Company Names
