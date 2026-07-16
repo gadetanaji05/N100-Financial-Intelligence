@@ -55,3 +55,11 @@ ETL pipeline for Nifty 100 financial datasets.
 - ✅ Day 3: ETL Pipeline
 - ✅ Day 4: Data Validation & Logging
 - ✅ Day 5: Final Integration & Documentation
+
+## Sprint 3 Progress
+
+- ✅ SQLite Database Integration
+- ✅ Database Connection
+- ✅ Created Tables
+- ✅ Loaded Excel Data into Database
+- ✅ Displayed Sample Records
