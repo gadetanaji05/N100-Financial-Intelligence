@@ -72,3 +72,13 @@ ETL pipeline for Nifty 100 financial datasets.
 - ✅ Search Company by Name
 - ✅ Count Total Companies
 - ✅ Listed All Company Names
+
+## Sprint 5 Progress
+
+- ✅ Loaded Companies Dataset
+- ✅ Checked Missing Values
+- ✅ Checked Duplicate Rows
+- ✅ Removed Duplicate Rows
+- ✅ Removed Missing Company Names
+- ✅ Filled Remaining Missing Values
+- ✅ Exported Cleaned Dataset
