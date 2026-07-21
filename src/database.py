@@ -152,6 +152,67 @@ def view_companies(conn):
     for row in rows:
         print(row)
 
+def show_columns(conn):
+    cursor = conn.cursor()
+
+    cursor.execute("PRAGMA table_info(analysis)")
+    columns = cursor.fetchall()
+
+    print("\nColumns in companies table:")
+    for col in columns:
+        print(col)
+
+def highest_roe(conn):
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT company_id, roe
+        FROM analysis
+        ORDER BY roe DESC
+        LIMIT 1
+    """)
+
+    result = cursor.fetchone()
+
+    print("\nHighest ROE Company")
+    print("----------------------")
+    print("Company:", result[0])
+    print("ROE:", result[1])
+
+def highest_stock_cagr(conn):
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT company_id, stock_price_cagr
+        FROM analysis
+        ORDER BY stock_price_cagr DESC
+        LIMIT 1
+    """)
+
+    result = cursor.fetchone()
+
+    print("\nHighest Stock Price CAGR")
+    print("--------------------------")
+    print("Company:", result[0])
+    print("Stock CAGR:", result[1])
+
+def highest_profit_growth(conn):
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT company_id, compounded_profit_growth
+        FROM analysis
+        ORDER BY compounded_profit_growth DESC
+        LIMIT 1
+    """)
+
+    result = cursor.fetchone()
+
+    print("\nHighest Profit Growth Company")
+    print("------------------------------")
+    print("Company:", result[0])
+    print("Profit Growth:", result[1])
+
 def main():
     conn = create_connection()
     create_tables(conn)
@@ -164,6 +225,10 @@ def main():
     load_documents(conn)
     load_prosandcons(conn)
     view_companies(conn)
+    show_columns(conn)
+    highest_roe(conn)
+    highest_stock_cagr(conn)
+    highest_profit_growth(conn)
 
     conn.close()
     print("Database connection closed.")
