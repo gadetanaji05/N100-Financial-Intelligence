@@ -1,5 +1,6 @@
 import pandas as pd
 import sqlite3
+from report import generate_financial_report
 
 def create_connection():
     conn = sqlite3.connect("financial_data.db")
@@ -211,6 +212,7 @@ def load_financial_ratios(conn):
         df["borrowings"] /
         (df["equity_capital"] + df["reserves"])
     )
+    print(df.columns.tolist())
 
     print(
         df[
@@ -561,6 +563,16 @@ def main():
     verify_high_roe(conn)
     verify_low_debt(conn)
     sprint2_summary(conn)
+    generate_financial_report(conn)
+
+    print("\nFinancial Ratios Table Columns")
+    print("-" * 40)
+
+    cursor = conn.cursor()
+    cursor.execute("PRAGMA table_info(financial_ratios)")
+
+    for col in cursor.fetchall():
+        print(col)
 
     conn.close()
     print("Database connection closed.")

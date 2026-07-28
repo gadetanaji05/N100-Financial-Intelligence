@@ -1,0 +1,30 @@
+quality_compounder:
+  roe_min: 15
+  debt_to_equity_max: 1
+
+high_profit:
+  net_profit_margin_min: 15
+
+operating_leader:
+  operating_profit_margin_min: 20
+
+value_pick:
+  roe_min: 12
+  debt_to_equity_max: 0.5
+  net_profit_margin_min: 10
+
+growth_accelerator:
+  roe_min: 20
+  operating_profit_margin_min: 20
+
+dividend_champion:
+  roe_min: 15
+  debt_to_equity_max: 0.3
+
+debt_free_bluechip:
+  debt_to_equity_max: 0.2
+  roe_min: 15
+
+turnaround_watch:
+  operating_profit_margin_min: 10
+  debt_to_equity_max: 1.5
